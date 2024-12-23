@@ -10,6 +10,7 @@ function App() {
   //useRef hook for copy button
   const passwordRef = useRef(null)
 
+  // useCallback used to cached function for memoization, not to run functions
   const passwordGenerator = useCallback(() => {
     let pass = ""
     let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
@@ -29,10 +30,11 @@ function App() {
   }, [length, numberAllowed, characterAllowed])
 
   const copyPasswordToClipboard = useCallback(() => {
-    passwordRef.current?.select()
-    window.navigator.clipboard.writeText(password)
+    passwordRef.current?.select();
+    window.navigator.clipboard.writeText(password);
   }, [password])
 
+  // useEffect is used to run fucntons according of dependencies
   useEffect(() => {
     passwordGenerator()
   }, [length, numberAllowed, characterAllowed, passwordGenerator])
