@@ -1,0 +1,16 @@
+// create and use store in redux => 
+
+// 1. Create store using configureStore()
+// 2. create slice using createSlice(); A slice combines the reducer logic, actions, and initial state in one place.
+
+// 3. reducers functions provides with two things - state, action
+
+// action: actions contains all value that we pass to function(use action.payload to access the value)
+// state: it contains the current state of the store
+
+// 4. export actions from slice
+// 5. export reducer from slice
+// 6. add reducer/s in store.js
+// 7. now you can import individual reducer functions in whichever component you want
+// 8. useDispatch is used to send actions to store
+// 9. useSelector is used to fetch state from store
